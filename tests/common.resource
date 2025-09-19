@@ -1,3 +1,3 @@
 *** Settings ***
 
-Resource ../core/all.resource
+Resource    ../core/all.resource
