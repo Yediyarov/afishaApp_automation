@@ -10,5 +10,5 @@ Allow Location And Confirm City
     onboarding.Allow Location
     onboarding.Confirm City
     onboarding.Allow Notifications
-    Wait Until Page Contains Element    locator=ru.afisha.android:id/itemTileEventIv
+    Wait Until Page Contains Element    locator=${VERTICAL_FEATURED_IMAGE}
     [Teardown]    Close Application
