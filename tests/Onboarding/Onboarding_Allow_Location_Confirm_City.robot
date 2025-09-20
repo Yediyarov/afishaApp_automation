@@ -12,5 +12,5 @@ Allow Location And Confirm City
     
     onboarding.Allow Location
     onboarding.Confirm City
-    onboarding.Allow Notifications
+    IF     ${PLATFORM_VERSION} > 13   onboarding.Allow Notifications
     Wait Until Page Contains Element    locator=${VERTICAL_FEATURED_IMAGE}
