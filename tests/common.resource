@@ -1,12 +1,16 @@
 *** Settings ***
-
 Resource    ../core/all.resource
-
+Resource    Onboarding/onboarding.resource
 
 *** Keywords ***
 Launch App
     [Documentation]    Запустить приложение
     launcher.Open App
+
+Launch App With Geo
+    [Documentation]    Запустить приложение с геолокацией
+    Launch App
+    onboarding.Allow Location And Confirm City
 
 Close App
     [Documentation]    Закрыть приложение
