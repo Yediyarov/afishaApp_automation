@@ -4,12 +4,17 @@ Resource    ../common.resource
 *** Keywords ***
 Allow Location
     [Documentation]    Разрешить геолокацию
-    Wait Until Page Contains Element    ${ONBOARDING_SUBMIT_BTN}    timeout=5s
+
+    Wait Until Page Contains Element    ${ONBOARDING_SUBMIT_BTN}    timeout=10s
     Click Element    locator=${ONBOARDING_SUBMIT_BTN}
 
-    Wait Until Page Contains Element    locator=${PERMISSION_FOREGROUND}
-    Click Element    locator=${PERMISSION_FOREGROUND}
-
+    IF    ${PLATFORM_VERSION} > 9
+        Wait Until Page Contains Element    locator=${PERMISSION_FOREGROUND}
+        Click Element    locator=${PERMISSION_FOREGROUND}
+    ELSE
+        Wait Until Page Contains Element    locator=${PERMISSION_ALLOW_OLD}
+        Click Element    locator=${PERMISSION_ALLOW_OLD}
+    END
 
 Confirm City
     [Documentation]    Подтвердить город
